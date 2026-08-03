@@ -10,7 +10,7 @@ openssl rand -base64 32     # -> BETTER_AUTH_SECRET
 
 bun run dev                 # watch mode on http://localhost:3001
 bun run test
-bun run build && bun run start:prod
+bun run build:local && bun run start:prod
 ```
 
 Five values are required and the process refuses to boot without them, naming

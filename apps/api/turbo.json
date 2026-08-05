@@ -4,7 +4,7 @@
 	"tasks": {
 		"build": {
 			"dependsOn": ["$TURBO_EXTENDS$"],
-			"outputs": ["dist/**"]
+			"outputs": [".vercel/output/**"]
 		},
 		"check-types": {
 			"dependsOn": ["$TURBO_EXTENDS$", "trpc:generate"]

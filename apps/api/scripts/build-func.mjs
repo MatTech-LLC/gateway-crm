@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 
 const apiDir = dirname(dirname(fileURLToPath(import.meta.url)));
 const repoRoot = dirname(dirname(apiDir));
-const outDir = join(repoRoot, ".vercel/output");
+const outDir = join(apiDir, ".vercel/output");
 const funcDir = join(outDir, "functions/api/index.func");
 const bun = process.env.BUN_BIN || "bun";
 
@@ -38,7 +38,7 @@ mkdirSync(funcDir, { recursive: true });
 console.log("• bundling function with bun build...");
 execSync(
 	[
-		`${bun} build api/index.ts`,
+		`${bun} build function-entry.ts`,
 		"--target=node",
 		"--format=esm",
 		`--outfile=${JSON.stringify(join(funcDir, "index.mjs"))}`,
